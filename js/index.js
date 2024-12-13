@@ -43,4 +43,10 @@ async function getData() {
                          })
                 }
             }
-        }
+            swal({
+                title: `Datos enviados satisfactoriamente`,
+                icon: "success",
+                 })
+                 //inputArr.forEach(({id}) => document.getElementById(id).value = "")
+                 inputArr.forEach(({id}) => document.getElementById(id).value = "")
+    }
