@@ -18,4 +18,29 @@ async function getData() {
             });
         }
         getData()
-        // <a href="project1.html" class="msj1">Project one rose palm tree</a>
+
+        const btn_validar = document.getElementById('btn-validar').onclick = (e) => {
+            e.preventDefault();
+            const inputArr = [
+                {id:"nombre", nombe:"Nombre"},
+                {id:"email", nombe:"Email"},
+                {id:"fecha", nombe:"Fecha"},
+                {id:"hora", nombe:"Hora"},
+                {id:"mensaje", nombe:"Mensaje"}
+            ];
+            for(let{id, nombe} of inputArr ){
+                const element = document.getElementById(id);
+                if(element.value.trim() === ""){
+                    return  swal({
+                        title: `El campo ${nombe} no puede estar vacío`,
+                        icon: "error",
+                         })
+                }
+                if("email" === id && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(element.value)){
+                    return  swal({
+                        title: `El campo ${nombe} no tiene el formato correcto`,
+                        icon: "error",
+                         })
+                }
+            }
+        }
