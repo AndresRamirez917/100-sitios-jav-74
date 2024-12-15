@@ -9,7 +9,7 @@ async function getData() {
             
             <div class="grid-box box-${numArr[index]}">
                 
-                <a href="project1.html" class="msj1" ><img src="${element.strDrinkThumb}" alt=""></a>
+                <a href="project${numArr[index]}.html" class="msj1" ><img src="${element.strDrinkThumb}" alt=""></a>
                 </div>
                 
                 `)
@@ -47,6 +47,5 @@ async function getData() {
                 title: `Datos enviados satisfactoriamente`,
                 icon: "success",
                  })
-                 //inputArr.forEach(({id}) => document.getElementById(id).value = "")
                  inputArr.forEach(({id}) => document.getElementById(id).value = "")
     }
