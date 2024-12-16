@@ -8,15 +8,20 @@ async function getData() {
         const box = document.createRange().createContextualFragment(`
             
             <div class="grid-box box-${numArr[index]}">
-                
-                <a href="project${numArr[index]}.html" class="msj1" ><img src="${element.strDrinkThumb}" alt=""></a>
+             
                 </div>
+                 <a href="project${numArr[index]}.html?img=${encodeURIComponent(element.strDrinkThumb)}" class="btn" onclick="saveImage('${element.strDrinkThumb}', '${numArr[index]}')"></a>
                 
                 `)
                 const showcase = document.getElementById('showcase');
                 showcase.append(box)
             });
         }
+
+        function saveImage(imgUrl, page) {
+            localStorage.setItem(`savedImage_${page}`, imgUrl);
+        } 
+
         getData()
 
         const btn_validar = document.getElementById('btn-validar').onclick = (e) => {
