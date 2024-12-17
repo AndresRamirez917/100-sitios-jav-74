@@ -195,6 +195,7 @@ img {
 }
 #work .work-row .flex-box img {
   width: 100%;
+  border-radius: 5px;
 }
 #work .work-row .flex-box p {
   margin: 1rem 0 2rem 0;
