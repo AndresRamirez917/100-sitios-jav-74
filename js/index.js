@@ -27,6 +27,28 @@ async function getData() {
 
         getData()
 
+        async function getData2() {
+            const result = await fetch('https://thecocktaildb.com/api/json/v1/1/search.php?s=Vodka');
+            const coctail = await result.json();
+            const numArr = ["1", "2", "3", "4", "5", "6"];
+            const coctailSlice = coctail.drinks.sort(() => 0.5 - Math.random()).slice(0, 6);
+            coctailSlice.forEach(element => {
+                const box = document.createRange().createContextualFragment(`
+                    
+                    <div class="flex-box box-1">
+                        <img src="${element.strDrinkThumb}" alt="">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tenetur quia inventore quos accusantium odit provident magnam et pariatur hic, alias, soluta magni unde ipsum dolore at quam! Quam animi dolore reprehenderit fugit, recusandae ea.
+                        </p>
+                    </div>
+                    
+                    `)
+                    const work_row = document.querySelector('.work-row');
+                    work_row.append(box)
+            })
+        }
+        getData2()
+
         const btn_validar = document.getElementById('btn-validar').onclick = (e) => {
             e.preventDefault();
             const inputArr = [
