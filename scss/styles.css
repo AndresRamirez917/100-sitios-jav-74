@@ -187,9 +187,11 @@ img {
 }
 #work .work-row {
   margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 #work .work-row .flex-box {
-  flex: 1;
+  width: 25%;
+  margin: 0 auto;
 }
 #work .work-row .flex-box img {
   width: 100%;
