@@ -8,9 +8,9 @@ async function getData() {
         const box = document.createRange().createContextualFragment(`
             
             <div class="grid-box box-${numArr[index]}">
-             
-                </div>
-                 <a href="project${numArr[index]}.html?img=${encodeURIComponent(element.strDrinkThumb)}" class="btn" onclick="saveImage('${element.strDrinkThumb}', '${numArr[index]}')"></a>
+                <img src="${element.strDrinkThumb}" alt="">
+                <a href="project${numArr[index]}.html?img=${encodeURIComponent(element.strDrinkThumb)}" class="btn" onclick="saveImage('${element.strDrinkThumb}', '${numArr[index]}')"></a>
+            </div>
                 
                 `)
                 const showcase = document.getElementById('showcase');
